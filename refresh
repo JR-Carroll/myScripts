@@ -1,0 +1,17 @@
+#!/bin/sh
+
+# Refreshes the desktop environment so shit doesn't look all wonky
+# This is normally invoked/used after plugging in/out a 2nd monitor.
+# VirtualBox doesn't like it.
+
+# Refresh the wallpaper
+nitrogen --restore &
+
+# Kill the most recent version of conky (the side bar with all the metrics I
+# never use).
+pkill conky &
+
+# Sleep for a second, before reinvoking conky.
+# Restart conky
+sleep 1
+conky &
